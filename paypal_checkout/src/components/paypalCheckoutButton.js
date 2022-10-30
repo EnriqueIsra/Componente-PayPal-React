@@ -19,7 +19,7 @@ const paypalCheckoutButton = ({ order }) => {
     },
   };
 
-  const paypalButton = paypal.Button.driver("react", { React, ReactDOM });
+  const PayPalButton = paypal.Button.driver('react', { React, ReactDOM });
 
   const payment = (data, actions) => {
     const payment = {
@@ -63,17 +63,17 @@ const paypalCheckoutButton = ({ order }) => {
   };
 
   return (
-    <paypalButton
-        env={paypalConfig.env}
-        client={paypalConfig.client}
-        payment={(data,actions) => payment(data,actions)} 
-        onAuthorize={(data,actions) => onAuthorize(data,actions)} 
-        onCancel={(data,actions) => onCancel(data,actions)} 
-        onError={(error) => onError(error)} 
-        style={paypalConfig.style}
-        commit
-        locale="es_MX"
+    <PayPalButton
+      env={paypalConfig.env}
+      client={paypalConfig.client}
+      payment={(data, actions) => payment(data, actions)}
+      onAuthorize={(data, actions) => onAuthorize(data, actions)}
+      onCancel={(data, actions) => onCancel(data, actions)}
+      onError={(error) => onError(error)}
+      style={paypalConfig.style}
+      commit
+      locale="es_MX"
     />
-  )
+  );
 };
 export default paypalCheckoutButton;
