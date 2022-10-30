@@ -9,17 +9,17 @@ const paypalCheckoutButton = ({ order }) => {
     client: {
       sandbox:
         "AQme60jFi6hE4Vh9tfOD7bqUPiPcQ2HR_mxHgyT-drt6tLlPBMJ4ZZpsCIA1gEWxajgMA73a8uD3choj",
-      production: "-- id --",
+      production: "-- id--",
     },
     style: {
       label: "pay",
       size: "medium",
       shape: "pill",
-      color: "gold ",
+      color: "gold",
     },
   };
 
-  const PayPalButton = paypal.Button.driver('react', { React, ReactDOM });
+  const PayPalButton = paypal.Button.driver("react", { React, ReactDOM });
 
   const payment = (data, actions) => {
     const payment = {
@@ -56,7 +56,7 @@ const paypalCheckoutButton = ({ order }) => {
   };
   const onError = (error) => {
     console.log(error);
-    alert("El pago no fue realizado, intentelo nuevamente");
+    alert("ah ocurrido un error, El pago no fue realizado, intentelo nuevamente");
   };
   const onCancel = (data, actions) => {
     alert("Error, has cancelado el proceso de pago");
