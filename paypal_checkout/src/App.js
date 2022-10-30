@@ -31,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      <header>
         <img src={logo} className="App-logo" alt="logo" />
         <paypalCheckoutButton order={order}/>
       </header>
