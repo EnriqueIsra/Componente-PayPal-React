@@ -1,22 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
 
+import React from 'react';
+import paypalCheckoutButton from './components/paypalCheckoutButton';
+
 function App() {
+
+  const order = {
+    customer: 'Enrique Torres',
+    total: '12,957.00',
+    items: [
+      {
+        sku:'142',
+        name: 'Jordan Why Not .5?',
+        price: '$2,699',
+        quantity: 1,
+        currency: 'MXN'
+      },
+      {
+        sku:'154',
+        name: 'LeBron 19',
+        price: '$5,129',
+        quantity: 2,
+        currency: 'MXN'
+      }
+    ]
+  }
+
+
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <paypalCheckoutButton order={order}/>
       </header>
     </div>
   );
